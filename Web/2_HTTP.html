@@ -62,7 +62,73 @@
 
     <section>
       <h3>HTTP 메시지</h3>
-      // TODO
+
+      <p>클라이언트와 서버의 소통은 메시기로 이루어진다.</p>
+
+      <div>
+        <h4>요청 메시지</h4>
+        <p>공백 제외 3가지 부분 - Start line, Headers, Body</p>
+
+        <p>Start line = GET /test.html HTTP/1.1 => [HTTP Method] [Request Target] [HTTP Version]</p>
+
+        <p>
+          Headers = 해당 요청에 대한 추가 정보를 Key:Value 형태로 담고있다.<br />
+          Host: 요청하려는 서버의 호스트<br />
+          User-agent: 클라이언트 프로그램 정보<br />
+          Accept: 클라이언트가 받아들일 수 있는 MIME 타입<br />
+          Authorization: 인증 토큰 정보<br />
+          등등
+        </p>
+
+        <p>
+          Body = 서버로 전달되는 실제 데이터<br />
+          가장 보편적으로 쓰이는 GET, POST, PUT, DELETE 에서<br />
+          POST, PUT 은 Body에 데이터를 담아서 보낸다.<br />
+          GET, DELETE 도 담을 수 있지만 권장되지 않는다.
+        </p>
+
+        <p>
+          GET - 조회<br />
+          POST - 추가<br />
+          PUT - 수정<br />
+          DELETE - 삭제<br />
+          PATCH - 부분 수정<br />
+          OPTIONS - 허용된 통신 옵션 요청 후 허가된 요청에 한해서 전송하기 위한 보안상의 목적<br />
+          발생 조건이 따로 있음 - SOP, CORS와 연관이 있네<br />
+          추후 서버 공부할 때 다시 보자<br />
+        </p>
+      </div>
+
+      <div>
+        <h4>응답 메시지</h4>
+        <p>공백 제외 3가지 부분 - Status line, Headers, Body</p>
+
+        <p>
+          Status line = HTTP/1.1 200 OK => [HTTP Version] [Status Code] [Status Text]
+        </p>
+
+        <p>
+          Headers<br />
+          Status Code: 응답 상태 코드<br />
+          Content-Type: 응답 바디의 타입<br />
+          Content-Length: 응답 바디의 길이<br />
+          Set-Cookie: 쿠키 정보<br />
+          등등
+        </p>
+
+        <p>
+          Body = 응답 데이터
+        </p>
+
+        <p>
+          응답코드<br />
+          1XX - 임시 응답 - 거의 만날일 없음(사실 잘 이해가 안감, 어떤 상황인지)<br />
+          2XX - 성공<br />
+          3XX - 리다이렉트 - 자동으로 앞에 m. 붙어서 모바일 페이지 보여주는게 이거네<br />
+          4XX - 클라이언트 오류<br />
+          5XX - 서버 오류<br />
+        </p>
+      </div>
     </section>
 
   </body>
